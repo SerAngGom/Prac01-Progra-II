@@ -1,0 +1,8 @@
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\bin\Debug\ejercicio 4.exe.config
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\bin\Debug\ejercicio 4.exe
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\bin\Debug\ejercicio 4.pdb
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\obj\Debug\ejercicio 4.csproj.AssemblyReference.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\obj\Debug\ejercicio 4.csproj.SuggestedBindingRedirects.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\obj\Debug\ejercicio 4.csproj.CoreCompileInputs.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\obj\Debug\ejercicio 4.exe
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\ejercicio 4\ejercicio 4\obj\Debug\ejercicio 4.pdb
