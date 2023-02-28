@@ -39,11 +39,13 @@ namespace ejercicio_4
                 }
                 
             }
-            for (int i = 0;i < arrayresultado.Length;i++)
+            Console.Write("[ ");
+            for (int i = 0;i < arrayresultado.Length-1;i++)
             {
-                Console.WriteLine(arrayresultado[i]);
+                Console.Write(arrayresultado[i] + ",");
             }
-            _ = Console.ReadKey();
+            Console.Write(arrayresultado[arrayresultado.Length-1]+" ]");
+            Console.ReadKey();
         }
     }
 }
