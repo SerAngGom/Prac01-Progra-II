@@ -1,0 +1,11 @@
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\bin\Debug\Semáforo.exe.config
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\bin\Debug\Semáforo.exe
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\bin\Debug\Semáforo.pdb
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.csproj.AssemblyReference.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.csproj.SuggestedBindingRedirects.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.Form1.resources
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.Properties.Resources.resources
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.csproj.GenerateResource.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.csproj.CoreCompileInputs.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.exe
+C:\Users\angul\Desktop\Repositorios gitHub\Prac01-Progra-II\Semáforo\Semáforo\obj\Debug\Semáforo.pdb

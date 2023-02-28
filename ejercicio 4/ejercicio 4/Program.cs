@@ -37,6 +37,11 @@ namespace ejercicio_4
                     arrayresultado[i] = array2[cont2];
                     cont2++;
                 }
+                else if (array1[cont1] == array2[cont2])
+                {
+                    arrayresultado[i] = array2[cont2];
+                    cont1++;    
+                }
                 
             }
             Console.Write("[ ");
