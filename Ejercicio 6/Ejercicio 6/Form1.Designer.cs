@@ -208,6 +208,7 @@
             this.teclaC.TabIndex = 16;
             this.teclaC.Text = "C";
             this.teclaC.UseVisualStyleBackColor = true;
+            this.teclaC.Click += new System.EventHandler(this.teclaC_Click);
             // 
             // teclaCE
             // 
