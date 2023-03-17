@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,13 +28,13 @@ namespace Ejercicio_6
             {
                 textBox1.Text = "";
             }
-            if(igual)
+            if (igual)
             {
-                igual= false;
+                igual = false;
                 textBox1.Text = "";
             }
             textBox1.Text += "1";
-            
+
         }
 
         private void tecla2_Click(object sender, EventArgs e)
@@ -160,16 +161,24 @@ namespace Ejercicio_6
 
         private void teclacambio_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(textBox1.Text) > 0) 
+            if (textBox1.Text != "")
             {
-                textBox1.Text = '-' + textBox1.Text;
+                if (Convert.ToDouble(textBox1.Text) > 0)
+                {
+                    textBox1.Text = '-' + textBox1.Text;
+                }
+                else if (Convert.ToDouble(textBox1.Text) < 0)
+                {
+                    double n = Convert.ToDouble(textBox1.Text);
+                    n *= -1;
+                    textBox1.Text = Convert.ToString(n);
+                }
             }
-            else if (Convert.ToDouble(textBox1.Text) < 0)
+            else
             {
-                double n = Convert.ToDouble(textBox1.Text);
-                n *= -1;
-                textBox1.Text = Convert.ToString(n);
-            } 
+                textBox1.Text += "-";
+            }
+
         }
 
         private void teclamas_Click(object sender, EventArgs e)
@@ -177,12 +186,12 @@ namespace Ejercicio_6
             operacion += textBox1.Text;
             if (ContieneSigno(operacion, '+'))
             {
-                int resultado = opera(operacion);
+                double resultado = opera(operacion);
                 textBox1.Text = Convert.ToString(resultado);
                 operacion = Convert.ToString(resultado);
             }
             else textBox1.Text = "";
-            operacion +=  "+";
+            operacion += "+";
 
         }
 
@@ -191,7 +200,7 @@ namespace Ejercicio_6
             operacion += textBox1.Text;
             if (ContieneSigno(operacion, '-'))
             {
-                int resultado = opera(operacion);
+                double resultado = opera(operacion);
                 textBox1.Text = Convert.ToString(resultado);
                 operacion = Convert.ToString(resultado);
             }
@@ -204,7 +213,7 @@ namespace Ejercicio_6
             operacion += textBox1.Text;
             if (ContieneSigno(operacion, '*'))
             {
-                int resultado = opera(operacion);
+                double resultado = opera(operacion);
                 textBox1.Text = Convert.ToString(resultado);
                 operacion = Convert.ToString(resultado);
             }
@@ -215,9 +224,9 @@ namespace Ejercicio_6
         private void tecladiv_Click(object sender, EventArgs e)
         {
             operacion += textBox1.Text;
-            if (ContieneSigno(operacion,'/'))
+            if (ContieneSigno(operacion, '/'))
             {
-                int resultado = opera(operacion);
+                double resultado = opera(operacion);
                 textBox1.Text = Convert.ToString(resultado);
                 operacion = Convert.ToString(resultado);
             }
@@ -228,12 +237,14 @@ namespace Ejercicio_6
 
         private void teclaigual_Click(object sender, EventArgs e)
         {
+            if (operacion[operacion.Length - 1] == '+' || operacion[operacion.Length - 1] == '-' || operacion[operacion.Length - 1] == '*' || operacion[operacion.Length - 1] == '/')
+            {
+
+            }
             operacion += textBox1.Text;
-            int resultado = opera(operacion);
+            double resultado = opera(operacion);
             textBox1.Text = Convert.ToString(resultado);
             operacion = "";
-            igual = true;
-
 
         }
 
@@ -242,17 +253,20 @@ namespace Ejercicio_6
             textBox1.Text = "";
             operacion = "";
         }
-        public int opera(string operacion)
+        public double opera(string operacion)
         {
-            int num1 = 0;
-            int num2 = 0;
+            double num1 = 0;
+            double num2 = 0;
             string aux = "";
-            int resultado = 0;
+            double resultado = 0;
+            aux += operacion[0];
+            int cont = 0;
             foreach (char i in operacion)
             {
-                if (i == '+' || i == '-' || i == '*' || i == '/')
+                if (cont == 0) cont++;
+                else if (i == '+' || i == '-' || i == '*' || i == '/')
                 {
-                    num1 = Convert.ToInt32(aux);
+                    num1 = Convert.ToDouble(aux, CultureInfo.InvariantCulture);
                     signo = i;
                     aux = "";
                 }
@@ -261,11 +275,13 @@ namespace Ejercicio_6
                     aux += i;
                 }
             }
-            num2 = Convert.ToInt32(aux);
+            num2 = Convert.ToDouble(aux, CultureInfo.InvariantCulture);
+
             if (signo == '+') resultado = num1 + num2;
             else if (signo == '-') resultado = num1 - num2;
             else if (signo == '*') resultado = num1 * num2;
             else if (signo == '/') resultado = num1 / num2;
+            igual = true;
             return resultado;
         }
         public bool ContieneSigno(string operacion, char signo)
@@ -273,7 +289,7 @@ namespace Ejercicio_6
             TieneSigno = false;
             foreach (char i in operacion)
             {
-                if (i == signo)TieneSigno = true;
+                if (i == signo) TieneSigno = true;
             }
             return TieneSigno;
         }
