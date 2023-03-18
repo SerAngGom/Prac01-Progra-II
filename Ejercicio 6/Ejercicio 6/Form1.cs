@@ -159,7 +159,7 @@ namespace Ejercicio_6
 
         private void teclapunto_Click(object sender, EventArgs e)
         {
-            textBox1.Text += ".";
+            textBox1.Text += ",";
         }
 
         private void teclacambio_Click(object sender, EventArgs e)
@@ -271,7 +271,7 @@ namespace Ejercicio_6
         public double opera(string operacion)
         {
             double num1 = 0;
-            double num2 = 0;
+            double num2;
             string aux = "";
             double resultado = 0;
             aux += operacion[0];
