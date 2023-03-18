@@ -22,7 +22,6 @@ namespace Ejercicio_6
         {
             InitializeComponent();
         }
-
         private void tecla1_Click(object sender, EventArgs e)
         {
             if (operacion != "" && textBox1.Text == "")
@@ -319,11 +318,28 @@ namespace Ejercicio_6
 
         private void teclaC_Click(object sender, EventArgs e)
         {
-
+            ActTecla();
         }
         public void ActTecla()
         {
-
+            tecla1_Click.Enabled = true;
+            tecla2_Click.Enabled = true;
+            tecla3_Click.Enabled = true;
+            tecla4_Click.Enabled = true;
+            tecla5_Click.Enabled = true;
+            tecla6_Click.Enabled = true;
+            tecla7_Click.Enabled = true;
+            tecla8_Click.Enabled = true;
+            tecla9_Click.Enabled = true;
+            tecla0_Click.Enabled = true;
+            teclapunto_Click.Enabled = true;
+            teclacambio_Click.Enabled = true;
+            teclamas_Click.Enabled = true;
+            teclamenos_Click.Enabled = true;
+            teclamult_Click.Enabled = true;
+            tecladiv_Click.Enabled = true;
+            teclaigual_Click.Enabled = true;
+            teclaCE_Click.Enabled = true;
         }
         public void DesacTecla()
         {
