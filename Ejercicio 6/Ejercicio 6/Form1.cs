@@ -17,10 +17,13 @@ namespace Ejercicio_6
         bool TieneSigno;
         char signo;
         bool igual;
-        DesacTecla();
+        bool encendido;
+        
         public Form1()
         {
             InitializeComponent();
+            DesacTecla();
+            encendido = false;
         }
         private void tecla1_Click(object sender, EventArgs e)
         {
@@ -318,49 +321,61 @@ namespace Ejercicio_6
 
         private void teclaC_Click(object sender, EventArgs e)
         {
-            ActTecla();
+            if (encendido== false) 
+            {
+                ActTecla();
+                encendido = true;
+            }
+            else
+            {
+                DesacTecla();
+                textBox1.Text = "";
+                operacion = "";
+                encendido = false;
+            }
+            
         }
         public void ActTecla()
         {
-            tecla1_Click.Enabled = true;
-            tecla2_Click.Enabled = true;
-            tecla3_Click.Enabled = true;
-            tecla4_Click.Enabled = true;
-            tecla5_Click.Enabled = true;
-            tecla6_Click.Enabled = true;
-            tecla7_Click.Enabled = true;
-            tecla8_Click.Enabled = true;
-            tecla9_Click.Enabled = true;
-            tecla0_Click.Enabled = true;
-            teclapunto_Click.Enabled = true;
-            teclacambio_Click.Enabled = true;
-            teclamas_Click.Enabled = true;
-            teclamenos_Click.Enabled = true;
-            teclamult_Click.Enabled = true;
-            tecladiv_Click.Enabled = true;
-            teclaigual_Click.Enabled = true;
-            teclaCE_Click.Enabled = true;
+            tecla1.Enabled = true;
+            tecla2.Enabled = true;
+            tecla3.Enabled = true;
+            tecla4.Enabled = true;
+            tecla5.Enabled = true;
+            tecla6.Enabled = true;
+            tecla7.Enabled = true;
+            tecla8.Enabled = true;
+            tecla9.Enabled = true;
+            tecla0.Enabled = true;
+            teclapunto.Enabled = true;
+            teclacambio.Enabled = true;
+            teclamas.Enabled = true;
+            teclamenos.Enabled = true;
+            teclamult.Enabled = true;
+            tecladiv.Enabled = true;
+            teclaigual.Enabled = true;
+            teclaCE.Enabled = true;
         }
         public void DesacTecla()
         {
-            tecla1_Click.Enabled = false;
-            tecla2_Click.Enabled = false;
-            tecla3_Click.Enabled = false;
-            tecla4_Click.Enabled = false;
-            tecla5_Click.Enabled = false;
-            tecla6_Click.Enabled = false;
-            tecla7_Click.Enabled = false;
-            tecla8_Click.Enabled = false;
-            tecla9_Click.Enabled = false;
-            tecla0_Click.Enabled = false;
-            teclapunto_Click.Enabled = false;
-            teclacambio_Click.Enabled = false;
-            teclamas_Click.Enabled = false;
-            teclamenos_Click.Enabled = false;
-            teclamult_Click.Enabled = false;
-            tecladiv_Click.Enabled = false;
-            teclaigual_Click.Enabled = false;
-            teclaCE_Click.Enabled = false;
+            tecla1.Enabled = false;
+            tecla2.Enabled = false;
+            tecla3.Enabled = false;
+            tecla4.Enabled = false;
+            tecla5.Enabled = false;
+            tecla6.Enabled = false;
+            tecla7.Enabled = false;
+            tecla8.Enabled = false;
+            tecla9.Enabled = false;
+            tecla0.Enabled = false;
+            teclapunto.Enabled = false;
+            teclacambio.Enabled = false;
+            teclamas.Enabled = false;
+            teclamenos.Enabled = false;
+            teclamult.Enabled = false;
+            tecladiv.Enabled = false;
+            teclaigual.Enabled = false;
+            teclaCE.Enabled = false;
         }
     }
 }
