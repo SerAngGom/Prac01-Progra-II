@@ -17,6 +17,7 @@ namespace Ejercicio_6
         bool TieneSigno;
         char signo;
         bool igual;
+        DesacTecla();
         public Form1()
         {
             InitializeComponent();
@@ -184,7 +185,7 @@ namespace Ejercicio_6
         private void teclamas_Click(object sender, EventArgs e)
         {
             operacion += textBox1.Text;
-            if (ContieneSigno(operacion, '+'))
+            if (ContieneSigno(operacion))
             {
                 double resultado = opera(operacion);
                 textBox1.Text = Convert.ToString(resultado);
@@ -198,7 +199,7 @@ namespace Ejercicio_6
         private void teclamenos_Click(object sender, EventArgs e)
         {
             operacion += textBox1.Text;
-            if (ContieneSigno(operacion, '-'))
+            if (ContieneSigno(operacion))
             {
                 double resultado = opera(operacion);
                 textBox1.Text = Convert.ToString(resultado);
@@ -211,7 +212,7 @@ namespace Ejercicio_6
         private void teclamult_Click(object sender, EventArgs e)
         {
             operacion += textBox1.Text;
-            if (ContieneSigno(operacion, '*'))
+            if (ContieneSigno(operacion))
             {
                 double resultado = opera(operacion);
                 textBox1.Text = Convert.ToString(resultado);
@@ -224,11 +225,18 @@ namespace Ejercicio_6
         private void tecladiv_Click(object sender, EventArgs e)
         {
             operacion += textBox1.Text;
-            if (ContieneSigno(operacion, '/'))
+            if (ContieneSigno(operacion))
             {
                 double resultado = opera(operacion);
-                textBox1.Text = Convert.ToString(resultado);
-                operacion = Convert.ToString(resultado);
+                if (Convert.ToString(resultado) == "∞")
+                {
+                    textBox1.Text = "ERROR";
+                }
+                else
+                {
+                    textBox1.Text = Convert.ToString(resultado);
+                    operacion = Convert.ToString(resultado);
+                }
             }
             else textBox1.Text = "";
             operacion += "/";
@@ -237,14 +245,19 @@ namespace Ejercicio_6
 
         private void teclaigual_Click(object sender, EventArgs e)
         {
-            if (operacion[operacion.Length - 1] == '+' || operacion[operacion.Length - 1] == '-' || operacion[operacion.Length - 1] == '*' || operacion[operacion.Length - 1] == '/')
-            {
-
-            }
             operacion += textBox1.Text;
             double resultado = opera(operacion);
-            textBox1.Text = Convert.ToString(resultado);
-            operacion = "";
+            if (Convert.ToString(resultado) == "∞")
+            {
+                textBox1.Text = "ERROR";
+            }
+            else
+            {
+                textBox1.Text = Convert.ToString(resultado);
+                operacion = "";
+            }
+            
+            
 
         }
 
@@ -284,12 +297,22 @@ namespace Ejercicio_6
             igual = true;
             return resultado;
         }
-        public bool ContieneSigno(string operacion, char signo)
+        public bool ContieneSigno(string operacion)
         {
             TieneSigno = false;
-            foreach (char i in operacion)
+            char[] signos;
+            signos = new char[4];
+            signos[0] = '+';
+            signos[1] = '-';
+            signos[2] = '*';
+            signos[3] = '/';
+            foreach (char j in signos)
             {
-                if (i == signo) TieneSigno = true;
+                foreach (char i in operacion)
+                {
+                    if (i == j) return true;
+
+                }
             }
             return TieneSigno;
         }
@@ -297,6 +320,31 @@ namespace Ejercicio_6
         private void teclaC_Click(object sender, EventArgs e)
         {
 
+        }
+        public void ActTecla()
+        {
+
+        }
+        public void DesacTecla()
+        {
+            tecla1_Click.Enabled = false;
+            tecla2_Click.Enabled = false;
+            tecla3_Click.Enabled = false;
+            tecla4_Click.Enabled = false;
+            tecla5_Click.Enabled = false;
+            tecla6_Click.Enabled = false;
+            tecla7_Click.Enabled = false;
+            tecla8_Click.Enabled = false;
+            tecla9_Click.Enabled = false;
+            tecla0_Click.Enabled = false;
+            teclapunto_Click.Enabled = false;
+            teclacambio_Click.Enabled = false;
+            teclamas_Click.Enabled = false;
+            teclamenos_Click.Enabled = false;
+            teclamult_Click.Enabled = false;
+            tecladiv_Click.Enabled = false;
+            teclaigual_Click.Enabled = false;
+            teclaCE_Click.Enabled = false;
         }
     }
 }
